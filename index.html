@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" charset="utf-8"></script>
+        <title></title>
+    </head>
+    <body>
+        <header>
+            <label class="file-uploader_label" for="file-uploader">Select a file</label>
+            <input type="file"id="file-uploader"accept="image/png, image/jpeg">
+        </header>
+        <main>
+            <div class="renderer">
+                <img class="image" style="display: block"/>
+            </div>
+            <div class="controls">
+                <div>
+                    <label for="contrast">Contrast</label>
+                    <input class="filter-input" type="range" id="contrast" min="0" max="200" value="100" data-suffix="%">
+                </div>
+
+                <div>
+                    <label for="brightness">Brightness</label>
+                    <input class="filter-input" type="range" id="brightness" min="0" max="200" value="100" data-suffix="%">
+                </div>
+
+                <div>
+                    <label for="saturate">Saturation</label>
+                    <input class="filter-input" type="range" id="saturate" min="0" max="200" value="100" data-suffix="%">
+                </div>
+
+                <div>
+                    <label for="hue-rotate">Hue</label>
+                    <input class="filter-input" type="range" id="hue-rotate" min="-180" max="180" value="0" data-suffix="DEG">
+                </div>
+
+                <div>
+                    <label for="saturation">Blur</label>
+                    <input class="filter-input" type="range" id="blur" min="0" max="50" value="0" data-suffix="px">
+                </div>
+
+                <a id="download" download="my_edited file">Download image</a>
+            </div>
+        </main>
+
+        <canvas crossOrigin="Anonymous" id="rendered" ></canvas>
+    </body>
+</html>

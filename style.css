@@ -1,0 +1,152 @@
+*{
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+body{
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* hide unnecessary elements */
+canvas{
+    display: none;
+}
+#file-uploader{
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+/* file uploader */
+.file-uploader_label{
+    display: block;
+    background-color: hsl(240,55%,60%);
+    padding: .5em 1em;
+    border-radius: 1em;
+    color: white;
+    cursor: pointer;
+    margin: .5em;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.file-uploader_label:hover{
+    background-color: hsl(220,55%,50%);
+}
+
+/* renderer */
+main{
+    display: flex;
+    flex-grow: 1;
+    padding: 1em;
+}
+
+.renderer{
+    background-color: #222;
+    flex-grow: 1;
+}
+
+.image{
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+.controls{
+    padding: 5px;
+    width: 20vw;
+}
+
+.controls label{
+    display: block;
+    margin-bottom: 10px;
+}
+
+.controls input{
+    display: block;
+}
+
+/* range inputs, see https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/ */
+input[type=range] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 25px;
+  width: 10px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+  margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+}
+
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 25px;
+  width: 10px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: hsl(240,55%,60%);
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: hsl(240,55%,60%);
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+
+input[type=range]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+
+  /* Hides the slider so custom styles can be added */
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+a{
+    display : block;
+    margin-top: 15px;
+    background-color: hsl(240,55%,60%);
+    padding: .5em 1em;
+    border-radius: 1em;
+    color: white;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;;
+}
+
+a:hover{
+    background-color: hsl(220,55%,50%);
+}
